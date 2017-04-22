@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prestart": "babel-node buildScripts/startMessage.js",
+    "start": "npm-run-all --parallel security-check openSource  share",
+    "openSource": "babel-node buildScripts/srcServer.js",
+    "security-check": "nsp check",
+    "share": "lt --port 3000 --subdomain venkat"
   },
   "repository": {
     "type": "git",
@@ -17,8 +21,15 @@
   },
   "homepage": "https://github.com/vsolasa01/startupkit2#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "^6.24.1",
     "chalk": "^1.1.3",
     "express": "^4.15.2",
+    "localtunnel": "^1.8.2",
+    "npm-run-all": "^4.0.2",
     "open": "0.0.5",
     "path": "^0.12.7"
   }

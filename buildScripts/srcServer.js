@@ -1,7 +1,9 @@
-var express=require('express');
-var path=require('path');
-var chalk=require('chalk');
-var open=require('open');
+import express from 'express';
+import path from 'path';
+import chalk from 'chalk';
+// import open from 'open';
+// var chalk=require('chalk');
+// var open=require('open');
 
 var port=3000;
 
@@ -15,7 +17,8 @@ app.listen(port,function(err){
     console.log(chalk.blue("server is running on port:"+port));
     if(err){
         console.log(err);
-    }else{
-        open('http://localhost:'+port);
     }
+    // else{
+    //     open('http://localhost:'+port);
+    // }
 });
